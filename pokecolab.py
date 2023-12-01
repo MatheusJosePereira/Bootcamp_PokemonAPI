@@ -1,8 +1,7 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request
 from models.pokemonlab import Pokemon
 import requests
-import json
-import base64
+
 
 
 
@@ -12,7 +11,7 @@ app = Flask(__name__)
 
 
 
-@app.route("/") #rotas para o html
+@app.route("/")
 def index():
     return render_template('index.html')
 
@@ -26,7 +25,7 @@ def buscar():
         # Faz uma requisição à API  para obter informações do Pokémon
         res = requests.get(f"https://pokeapi.co/api/v2/pokemon/{nome_pokemon}")
 
-        # Lança uma exceção para códigos de status diferentes de 2xx
+        # Lança uma exceção para códigos de status diferentes
         res.raise_for_status()
 
         # Converte a resposta JSON em um dicionário
@@ -38,17 +37,17 @@ def buscar():
         # Obtém a URL da imagem frontal do Pokémon a partir dos dados da API
         result = data["sprites"]["front_default"]
         pokemon.foto = result
-    except requests.exceptions.HTTPError as error:
+    except requests.exceptions.HTTPError:
         # Trata erros HTTP 404 que aparece no terminal
         if res.status_code == 404:
             return "Pokemon não encontrado volte a página e tente novamente!"
         else:
-            return f"Erro HTTP: {error}"
+            return "Erro HTTP: "
     except Exception as e:
         # Trata outros erros
         return f"Erro: {e}"
 
-    # Renderiza a página 
+    
     return render_template("index.html",
                            nome=pokemon.nome,
                            foto=pokemon.foto,
