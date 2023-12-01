@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(../static/fundo.jpg);
+    background-size: cover;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgb(255, 0, 0);
+    height: 100px;
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+}
+
+.pokemon_logo{
+    width: 150px;
+    margin-top: 10px;
+}
+
+.corpo_links {
+    display: flex;
+    align-items: row;
+    list-style: none;
+}
+
+.links {
+    margin-right: 30px;
+    margin-top: 30px;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+    
+}
+
+.links:hover{
+    transition: 0.4s all ease-in;
+    color: yellow;
+}
+
+.links1 {
+    margin-right: 600px;
+    margin-top: 30px;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.links1:hover{
+    color: yellow;
+    transition: 0.4s all ease-in;
+}
+
+.botao {
+    margin-left: 20px;
+    width: 120px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: blue;
+    margin-bottom: 5px;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.botao:hover{
+    background-color: rgba(0, 0, 255, 0.699);
+    transition: 0.4s all;
+}
+
+.corpo_pokemons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    flex-direction: column;
+    border: 4px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    width: 900px;
+    margin-left: 300px;
+    margin-top: 50px;
+    background-image: url(../static/fundo_pokemon.jpg);
+    background-size: cover;
+}
+
+.pergunta {
+    font-weight: bolder;
+    font-size: 60px;
+    background: linear-gradient(to right, #ff8c00, #ff0080);
+    margin-bottom: 40px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Defina a cor do texto para transparente para que o degradê seja visível nas letras */
+    color: transparent;
+    /* Adicione estilos adicionais conforme necessário */
+    text-align: center;
+}
+.input_nome{
+    width: 300px;
+    height: 40px;
+    border-radius: 40px;
+    border: 2px solid black;
+    font-size: 20px;
+}
+
+.input_nome::placeholder{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.644);
+    background: linear-gradient(#9bb4a6, rgb(46, 54, 40));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 16px;
+}
+
+
+.pokemon_nome {
+    margin-left: 60px;
+    text-transform: uppercase;
+    position: absolute;
+    left: 600px;
+    top: 80%;
+    color: yellow;
+    font-size: 26px;
+}
+
+.submit_botao{
+    width: 120px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: blue;
+    margin-bottom: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.submit_botao:hover{
+    background-color: (rgba(0, 0, 255, 0.636)0, 38, 255);
+    transition: 0.4s all;
+}
+
+.pokemon_img {
+    width: 200px;
+    margin-left: 80px;
+    
+}
+
+.corpo_tipos{
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgba(106, 255, 47, 0.603);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: -150px;
+    margin-top: -150px;
+    
+   
+}
+
+.titulo_tipos{
+  
+    color: white;
+}
+
+
+
+.pokemon_tipo{
+    list-style-type: none;
+    
+    text-transform: capitalize;
+    font-size: 20px;
+    color: white;
+    
+}

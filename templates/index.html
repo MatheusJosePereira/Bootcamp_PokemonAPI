@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeColab</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='estilo.css')}}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img class="pokemon_logo" src="{{url_for('static', filename='pokemon_logo.png')}}" alt="">
+        <ul class="corpo_links">
+            <li class="links">Jogos</li>
+            <li class="links">Sobre</li>
+            <li class="links">Ajuda</li>
+            <li class="links1">Acessibilidade</li>
+            <button class="botao">Cadastre-se</button>
+            <button class="botao">Login</button>
+        </ul>
+    </nav>
+    <div class="corpo_pokemons">
+        <h1 class="pergunta">Quem é esse Pokemon?</h1>
+        <form action="buscar" method="POST">
+            <input class="input_nome" type="text" placeholder="buscar pokemon" name="nome">
+            <button class="submit_botao" type="submit" name="buscar">Buscar</button>
+            <img src="" alt=""><br />
+            <h3 class="pokemon_nome">{{nome}}</h3>
+            <img class="pokemon_img" src="{{foto}}">
+            <div class="corpo_tipos">
+                <h2 class="titulo_tipos">Tipo:</h2>
+                <ul class="tipos_lista">
+                    {% for tipo in tipos
+                    %}<!--Criação de lopping ativo e incorporação de lógica que está no pokecolab.py-->
+                    <li class="pokemon_tipo">{{ tipo }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
